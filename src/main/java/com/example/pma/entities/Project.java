@@ -10,7 +10,7 @@ public class Project {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) // id will be auto generated
-    private long projectId;
+    private long projectId; // this data type needs to be mentioned in crud interface
     private String name;
     private String stage; // NOTSTARTED, COMPLETED, INPROGRESS
     private String description;
@@ -18,6 +18,7 @@ public class Project {
     public Project() {
     }
 
+    // constructor will not have id parameter, that will be taken care by hibernate
     public Project(String name, String stage, String description) {
         this.name = name;
         this.stage = stage;
