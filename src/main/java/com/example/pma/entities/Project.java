@@ -9,7 +9,8 @@ import java.util.List;
 public class Project {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // id will be auto generated
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "project_seq") // id will be auto generated
+    @SequenceGenerator(name="project_seq",sequenceName="project_seq", allocationSize = 1)
     private long projectId; // this data type needs to be mentioned in crud interface
     private String name;
     private String stage; // NOTSTARTED, COMPLETED, INPROGRESS

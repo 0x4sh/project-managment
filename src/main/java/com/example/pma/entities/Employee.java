@@ -6,7 +6,8 @@ import java.util.List;
 @Entity
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee_seq")
+    @SequenceGenerator(name="employee_seq",sequenceName="employee_seq", allocationSize = 1)
     private long employeeId;
 
     private String firstName;
